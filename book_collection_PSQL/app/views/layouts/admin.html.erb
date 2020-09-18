@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Book Collection</title>
+    </head>
+    <body>
+
+    <!-- before yield -->
+    <%= yield %>
+    <!-- after yield -->
+
+    <br /><br />
+
+    <% if !flash[:notice].blank? %>
+        <div class="notice">
+            <%= flash[:notice] %>
+        </div>
+    <% end %>
+
+    </body>
+</html>
