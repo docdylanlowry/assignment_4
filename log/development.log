@@ -1,0 +1,46 @@
+Started GET "/books" for ::1 at 2020-09-17 22:01:25 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/admin
+  [1m[36mBook Load (1.3ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY "books"."id" ASC[0m
+  Rendered books/index.html.erb within layouts/admin (18.0ms)
+Completed 200 OK in 47ms (Views: 21.9ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/books/2/edit" for ::1 at 2020-09-17 22:01:28 -0500
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering books/edit.html.erb within layouts/admin
+  Rendered books/edit.html.erb within layouts/admin (12.1ms)
+Completed 200 OK in 22ms (Views: 15.2ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/books/2" for ::1 at 2020-09-17 22:01:33 -0500
+Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6JDCWJ2gKZ3xvShDq+2+lWbrlhdAw5Wqz69Qfv5kDm1VyoyhEYjAc9P7E7AXI7xwOB2zWsjAQgP26Itxzrl5mA==", "book"=>{"title"=>"Book 2", "author"=>"jacob", "genre"=>"Action", "price"=>"5.55", "published_date"=>"2020-09-09"}, "commit"=>"Update Book", "id"=>"2"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Update (0.6ms)[0m  [1m[33mUPDATE "books" SET "published_date" = $1, "updated_at" = $2 WHERE "books"."id" = $3[0m  [["published_date", "2020-09-09"], ["updated_at", "2020-09-18 03:01:33.111130"], ["id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/books/2
+Completed 302 Found in 6ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/books/2" for ::1 at 2020-09-17 22:01:33 -0500
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering books/show.html.erb within layouts/admin
+  Rendered books/show.html.erb within layouts/admin (1.2ms)
+Completed 200 OK in 8ms (Views: 5.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books" for ::1 at 2020-09-17 22:01:35 -0500
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/admin
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT "books".* FROM "books" ORDER BY "books"."id" ASC[0m
+  Rendered books/index.html.erb within layouts/admin (2.1ms)
+Completed 200 OK in 10ms (Views: 5.3ms | ActiveRecord: 0.4ms)
+
+
